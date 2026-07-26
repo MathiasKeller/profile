@@ -134,7 +134,7 @@ p:last-child{margin-bottom:0}
 /* ---------- hero ---------- */
 .hero{padding-top:clamp(48px,8vw,86px);padding-bottom:clamp(52px,7vw,80px)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(24px,5vw,60px);align-items:center}
-.hero h1{margin:22px 0 24px;max-width:15ch}
+.hero h1{margin:22px 0 24px;max-width:11em}
 .hero .sub{max-width:50ch}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .hero-art{position:relative;display:grid;place-items:center;min-height:280px}
@@ -163,7 +163,8 @@ p:last-child{margin-bottom:0}
   background:var(--surface);
 }
 .sec-tint > .shell{position:relative;z-index:1}
-.sec-head{max-width:24ch}
+.sec-head{max-width:none}
+.sec-head h2{max-width:16em}
 .sec-head .sub{margin-top:18px;max-width:52ch}
 
 /* ---------- value cards ---------- */
@@ -184,7 +185,7 @@ p:last-child{margin-bottom:0}
 .proof .sq{width:7px;height:7px;border-radius:2px;transform:rotate(45deg);flex:none}
 
 /* ---------- now / lifecycle ---------- */
-.now-quote{font-size:clamp(24px,3.6vw,42px);font-weight:800;letter-spacing:-.035em;line-height:1.1;max-width:20ch}
+.now-quote{font-size:clamp(24px,3.6vw,42px);font-weight:800;letter-spacing:-.035em;line-height:1.1;max-width:17em}
 .qrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:clamp(30px,3.6vw,44px)}
 .qcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px}
 .qcard .n{font-size:13px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:12px}
@@ -229,7 +230,7 @@ p:last-child{margin-bottom:0}
   background:radial-gradient(560px 320px at 88% 8%,rgba(255,255,255,.22),transparent 60%);
 }
 .impact .kicker{background:rgba(255,255,255,.16);color:#fff}
-.impact h2{margin:20px 0 16px;max-width:17ch}
+.impact h2{margin:20px 0 16px;max-width:15em}
 .impact .sub{color:rgba(255,255,255,.85);max-width:48ch}
 .impact-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:36px;position:relative;z-index:1}
 .ic{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18);border-radius:var(--r-md);padding:20px;backdrop-filter:blur(6px)}
@@ -244,7 +245,7 @@ p:last-child{margin-bottom:0}
 .feat::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(520px 300px at 92% 0%,rgba(109,58,232,.55),transparent 62%)}
 .feat > *{position:relative;z-index:1}
 .feat .kicker{background:rgba(255,255,255,.12);color:#c9b4ff}
-.feat h3{margin:20px 0 16px;font-size:clamp(24px,3.2vw,38px);max-width:19ch}
+.feat h3{margin:20px 0 16px;font-size:clamp(24px,3.2vw,38px);max-width:16em}
 .feat p{color:rgba(255,255,255,.76);max-width:56ch;font-size:16.5px}
 .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
 .chips span{font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.86);padding:8px 15px;border-radius:999px}
@@ -267,7 +268,7 @@ p:last-child{margin-bottom:0}
   background:radial-gradient(closest-side,rgba(109,58,232,.20),transparent);
 }
 .cta-box > *{position:relative;z-index:1}
-.cta-box h2{max-width:18ch;margin:20px auto 18px}
+.cta-box h2{max-width:15em;margin:20px auto 18px}
 .cta-box .sub{max-width:46ch;margin:0 auto}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:32px}
 
@@ -629,9 +630,9 @@ a:focus-visible,button:focus-visible{outline:2.5px solid var(--violet);outline-o
 <section class="view" id="view-ideas">
 
   <div class="hero shell">
-    <div style="max-width:22ch">
+    <div>
       <span class="kicker"><span class="dot"></span><span data-i18n="tl.kick">Writing &amp; speaking</span></span>
-      <h1 class="h-xl" style="margin:22px 0 24px" data-i18n="tl.h1">Chosen once. <span class="grad-text">Lived with for a decade.</span></h1>
+      <h1 class="h-xl" style="margin:22px 0 24px;max-width:11em" data-i18n="tl.h1">Chosen once. <span class="grad-text">Lived with for a decade.</span></h1>
     </div>
     <p class="sub" style="max-width:52ch" data-i18n="tl.sub">HR technology decisions are rarely revisited. I write for the people who have to make them and defend them two years later — CHROs, HR leaders, and the teams who own the systems.</p>
   </div>
