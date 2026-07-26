@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathias Keller — HR Technology, from the inside out</title>
+<meta name="description" content="Mathias Keller, Zurich. Fifteen years across every side of an HR software decision: recruiting, implementation, consulting leadership, account management, and now portfolio and partner strategy.">
+<meta property="og:title" content="Mathias Keller — HR Technology, from the inside out">
+<meta property="og:description" content="Recruited for it. Implemented it. Led the consultants who deliver it. Now I decide which HR technologies are worth betting on.">
+<meta property="og:type" content="profile">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238B5CF6'/%3E%3Cstop offset='1' stop-color='%23EC4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M32 12 16 26h32z' fill='%23fff' opacity='.95'/%3E%3Cpath d='M16 26h32L32 52z' fill='%23fff' opacity='.7'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* neutrals */
+  --paper:#ffffff;
+  --ink:#15161c;
+  --ink-soft:#3f414d;
+  --muted:#6d6f80;
+  --line:#eceaf5;
+  --surface:#faf9fe;
+
+  /* purple family = brand */
+  --violet:#6d3ae8;
+  --violet-deep:#4c1fb0;
+  --violet-soft:#f2ecfe;
+
+  /* accent spectrum for illustrations */
+  --blue:#4c6fff;
+  --pink:#e8479c;
+  --amber:#ffa41b;
+  --teal:#12b3a0;
+  --plum:#a13fd6;
+
+  --r-xl:34px;
+  --r-lg:26px;
+  --r-md:18px;
+  --r-sm:12px;
+
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --shell:1200px;
+  --gutter:clamp(20px,5vw,56px);
+  --shadow:0 1px 2px rgba(21,22,28,.04),0 12px 32px -14px rgba(21,22,28,.14);
+  --shadow-lift:0 2px 4px rgba(21,22,28,.05),0 26px 48px -20px rgba(76,31,176,.28);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font);font-size:17px;line-height:1.6;font-weight:400;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit}
+img,svg{display:block}
+::selection{background:var(--violet);color:#fff}
+
+.shell{max-width:var(--shell);margin:0 auto;padding:0 var(--gutter)}
+
+h1,h2,h3,h4{margin:0;font-weight:800;letter-spacing:-.035em;line-height:1.02}
+p{margin:0 0 1em}
+p:last-child{margin-bottom:0}
+
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--violet);background:var(--violet-soft);
+  padding:8px 15px;border-radius:999px;
+}
+.kicker .dot{width:6px;height:6px;border-radius:50%;background:currentColor}
+
+.h-xl{font-size:clamp(40px,7.6vw,88px)}
+.h-lg{font-size:clamp(32px,5.4vw,62px)}
+.h-md{font-size:clamp(25px,3.4vw,40px)}
+.grad-text{
+  background:linear-gradient(100deg,var(--violet) 0%,var(--plum) 42%,var(--pink) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.sub{font-size:clamp(17px,1.9vw,21px);line-height:1.5;color:var(--ink-soft);font-weight:500}
+.small{font-size:15.5px;color:var(--muted);line-height:1.62}
+
+/* ---------- background wash ---------- */
+.wash{
+  position:absolute;inset:0 0 auto;height:900px;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(720px 460px at 12% -6%,rgba(109,58,232,.20),transparent 62%),
+    radial-gradient(640px 420px at 88% -12%,rgba(232,71,156,.16),transparent 62%),
+    radial-gradient(760px 500px at 55% -22%,rgba(76,111,255,.16),transparent 65%);
+}
+
+/* ---------- nav ---------- */
+.topbar{position:sticky;top:0;z-index:80;padding:14px 0}
+.bar{
+  display:flex;align-items:center;gap:18px;
+  background:rgba(255,255,255,.72);
+  backdrop-filter:saturate(180%) blur(18px);
+  -webkit-backdrop-filter:saturate(180%) blur(18px);
+  border:1px solid rgba(21,22,28,.06);
+  border-radius:999px;padding:9px 9px 9px 20px;
+  box-shadow:0 1px 2px rgba(21,22,28,.03),0 10px 30px -18px rgba(21,22,28,.28);
+}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;letter-spacing:-.02em;font-size:16px;white-space:nowrap}
+.brand .mark{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--violet),var(--pink));flex:none}
+.navlinks{margin-left:auto;display:flex;align-items:center;gap:6px}
+.navlinks a{
+  text-decoration:none;font-size:14.5px;font-weight:600;color:var(--muted);
+  padding:9px 14px;border-radius:999px;transition:color .18s,background .18s;
+}
+.navlinks a:hover{color:var(--ink);background:rgba(21,22,28,.05)}
+.navlinks a[aria-current="page"]{color:var(--violet);background:var(--violet-soft)}
+.langpick{display:flex;gap:2px;background:rgba(21,22,28,.05);border-radius:999px;padding:3px}
+.langpick button{
+  border:0;background:transparent;font-family:inherit;font-size:12.5px;font-weight:700;
+  color:var(--muted);padding:6px 11px;border-radius:999px;cursor:pointer;transition:all .18s;
+}
+.langpick button[aria-pressed="true"]{background:var(--paper);color:var(--violet);box-shadow:0 1px 3px rgba(21,22,28,.12)}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+  font-size:15px;font-weight:700;padding:14px 24px;border-radius:999px;
+  transition:transform .2s,box-shadow .2s,background .2s,color .2s;
+}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:0 10px 24px -12px rgba(21,22,28,.7)}
+.btn-primary:hover{transform:translateY(-2px);background:var(--violet);box-shadow:var(--shadow-lift)}
+.btn-ghost{background:rgba(21,22,28,.045);color:var(--ink)}
+.btn-ghost:hover{transform:translateY(-2px);background:rgba(21,22,28,.09)}
+.btn .arw{transition:transform .2s}
+.btn:hover .arw{transform:translateX(3px)}
+
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(48px,8vw,86px);padding-bottom:clamp(52px,7vw,80px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(24px,5vw,60px);align-items:center}
+.hero h1{margin:22px 0 24px;max-width:15ch}
+.hero .sub{max-width:50ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-art{position:relative;display:grid;place-items:center;min-height:280px}
+.float{animation:float 7s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.float.d1{animation-delay:-2.4s}
+.float.d2{animation-delay:-4.6s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-16px) rotate(-2deg)}}
+
+/* ---------- journey ---------- */
+.path{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.step{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--paper);border:1px solid var(--line);border-radius:999px;
+  padding:11px 18px 11px 13px;font-weight:700;font-size:15px;box-shadow:var(--shadow);
+  transition:transform .2s,box-shadow .2s;
+}
+.step:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+.step .yr{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.02em}
+.step .pip{width:9px;height:9px;border-radius:3px;flex:none;transform:rotate(45deg)}
+
+/* ---------- sections ---------- */
+.sec{padding:clamp(64px,9vw,120px) 0;position:relative}
+.sec-tint{position:relative}
+.sec-tint::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background:var(--surface);
+}
+.sec-tint > .shell{position:relative;z-index:1}
+.sec-head{max-width:24ch}
+.sec-head .sub{margin-top:18px;max-width:52ch}
+
+/* ---------- value cards ---------- */
+.value-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:clamp(32px,4vw,50px)}
+.vcard{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:clamp(24px,2.6vw,32px);box-shadow:var(--shadow);
+  transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;
+}
+.vcard:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift)}
+.vcard .icon{width:46px;height:46px;margin-bottom:20px}
+.vcard h3{font-size:20px;letter-spacing:-.025em;line-height:1.18;margin-bottom:11px}
+.vcard p{font-size:15.5px;color:var(--muted);line-height:1.58;margin:0}
+.proof{
+  margin-top:20px;padding-top:16px;border-top:1px dashed var(--line);
+  font-size:14px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:9px;
+}
+.proof .sq{width:7px;height:7px;border-radius:2px;transform:rotate(45deg);flex:none}
+
+/* ---------- now / lifecycle ---------- */
+.now-quote{font-size:clamp(24px,3.6vw,42px);font-weight:800;letter-spacing:-.035em;line-height:1.1;max-width:20ch}
+.qrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:clamp(30px,3.6vw,44px)}
+.qcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px}
+.qcard .n{font-size:13px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:12px}
+.qcard p{font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.28;margin:0}
+
+.cycle{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(28px,3.4vw,40px)}
+.cyc{
+  flex:1 1 178px;background:var(--paper);border:1px solid var(--line);
+  border-radius:var(--r-md);padding:18px 20px;transition:transform .2s,border-color .2s;
+}
+.cyc:hover{transform:translateY(-3px);border-color:rgba(109,58,232,.35)}
+.cyc b{display:block;font-size:15.5px;letter-spacing:-.01em;margin-bottom:5px}
+.cyc span{font-size:13.5px;color:var(--muted);line-height:1.5}
+
+/* ---------- timeline ---------- */
+.tl{margin-top:clamp(30px,3.6vw,44px);display:flex;flex-direction:column;gap:10px}
+.trow{
+  display:grid;grid-template-columns:118px minmax(0,1fr) minmax(0,1.1fr);
+  gap:clamp(12px,2.4vw,28px);align-items:start;
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);
+  padding:20px clamp(18px,2.2vw,26px);transition:border-color .2s,transform .2s;
+}
+.trow:hover{border-color:rgba(109,58,232,.32);transform:translateX(3px)}
+.trow .yrs{font-size:13.5px;font-weight:700;color:var(--violet);padding-top:2px}
+.trow h4{font-size:17px;letter-spacing:-.02em;line-height:1.25}
+.trow .org{font-size:13.5px;color:var(--muted);font-weight:600;margin-top:4px}
+.trow .note{font-size:14.5px;color:var(--muted);line-height:1.55}
+.trow.soft{background:transparent;border-style:dashed}
+
+.edu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}
+.ecard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);padding:20px}
+.ecard b{display:block;font-size:15.5px;letter-spacing:-.015em}
+.ecard span{font-size:13.5px;color:var(--muted)}
+
+/* ---------- impact / nonprofit ---------- */
+.impact{
+  border-radius:var(--r-xl);padding:clamp(30px,4.4vw,58px);color:#fff;position:relative;overflow:hidden;
+  background:linear-gradient(128deg,#3b1585 0%,#6d3ae8 44%,#b53fc4 78%,#e8479c 100%);
+}
+.impact::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(560px 320px at 88% 8%,rgba(255,255,255,.22),transparent 60%);
+}
+.impact .kicker{background:rgba(255,255,255,.16);color:#fff}
+.impact h2{margin:20px 0 16px;max-width:17ch}
+.impact .sub{color:rgba(255,255,255,.85);max-width:48ch}
+.impact-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:36px;position:relative;z-index:1}
+.ic{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18);border-radius:var(--r-md);padding:20px;backdrop-filter:blur(6px)}
+.ic b{display:block;font-size:clamp(24px,3vw,34px);font-weight:800;letter-spacing:-.035em;line-height:1}
+.ic span{display:block;font-size:13.5px;color:rgba(255,255,255,.82);margin-top:8px;line-height:1.45}
+
+/* ---------- thought leadership ---------- */
+.feat{
+  background:var(--ink);color:#fff;border-radius:var(--r-xl);
+  padding:clamp(28px,4.2vw,54px);position:relative;overflow:hidden;
+}
+.feat::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(520px 300px at 92% 0%,rgba(109,58,232,.55),transparent 62%)}
+.feat > *{position:relative;z-index:1}
+.feat .kicker{background:rgba(255,255,255,.12);color:#c9b4ff}
+.feat h3{margin:20px 0 16px;font-size:clamp(24px,3.2vw,38px);max-width:19ch}
+.feat p{color:rgba(255,255,255,.76);max-width:56ch;font-size:16.5px}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+.chips span{font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.86);padding:8px 15px;border-radius:999px}
+.theme-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:clamp(30px,3.6vw,44px)}
+.tcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(24px,2.6vw,32px);box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
+.tcard:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift)}
+.tcard .icon{width:40px;height:40px;margin-bottom:18px}
+.tcard h3{font-size:20px;letter-spacing:-.025em;margin-bottom:10px;line-height:1.2}
+.tcard p{font-size:15.5px;color:var(--muted);margin:0;line-height:1.58}
+.fmt{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px}
+.fmt span{font-size:13.5px;font-weight:600;color:var(--muted);border:1px solid var(--line);background:var(--paper);padding:9px 16px;border-radius:999px}
+
+/* ---------- contact ---------- */
+.cta-box{
+  border-radius:var(--r-xl);border:1px solid var(--line);background:var(--surface);
+  padding:clamp(32px,5vw,68px);text-align:center;position:relative;overflow:hidden;
+}
+.cta-box::before{
+  content:"";position:absolute;inset:auto -10% -60% -10%;height:340px;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(109,58,232,.20),transparent);
+}
+.cta-box > *{position:relative;z-index:1}
+.cta-box h2{max-width:18ch;margin:20px auto 18px}
+.cta-box .sub{max-width:46ch;margin:0 auto}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:32px}
+
+footer{padding:36px 0 48px;color:var(--muted);font-size:14px}
+footer .shell{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+footer a{text-decoration:none;font-weight:600}
+footer a:hover{color:var(--violet)}
+
+/* ---------- routing + motion ---------- */
+.view{display:none}
+.view.active{display:block}
+.rev{opacity:0;transform:translateY(20px)}
+.rev.in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.22,.68,.3,1),transform .7s cubic-bezier(.22,.68,.3,1)}
+a:focus-visible,button:focus-visible{outline:2.5px solid var(--violet);outline-offset:3px;border-radius:6px}
+
+/* ---------- responsive ---------- */
+@media (min-width:720px){
+  .sec-tint::before{inset:0 clamp(12px,2.4vw,34px);border-radius:var(--r-xl)}
+}
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .hero-art{order:-1;min-height:200px;justify-items:start}
+  .value-grid,.qrow{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .impact-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .trow{grid-template-columns:96px minmax(0,1fr);row-gap:8px}
+  .trow .note{grid-column:2}
+  .edu{grid-template-columns:1fr}
+}
+@media (max-width:680px){
+  body{font-size:16px}
+  .value-grid,.qrow,.theme-grid{grid-template-columns:1fr}
+  .bar{padding:8px 8px 8px 16px;gap:10px}
+  .navlinks a{padding:8px 10px;font-size:13.5px}
+  .brand span{display:none}
+  .trow{grid-template-columns:1fr}
+  .trow .note{grid-column:1}
+  .hero-cta .btn{flex:1 1 100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+  .rev{opacity:1;transform:none}
+}
+@media print{
+  .topbar,.hero-art,.cta-row,.wash{display:none}
+  .view{display:block!important}
+  .impact,.feat{background:#fff!important;color:#000;border:1px solid #999}
+  .impact .sub,.feat p,.ic span{color:#333}
+  .ic,.chips span{border:1px solid #bbb}
+  body{font-size:11pt}
+  .sec{padding:16px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- icon sprite -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <symbol id="i-gem" viewBox="0 0 64 64">
+    <path d="M32 4 10 22h22z" fill="currentColor" opacity=".95"/>
+    <path d="M32 4 54 22H32z" fill="currentColor" opacity=".62"/>
+    <path d="M10 22h22v38z" fill="currentColor" opacity=".45"/>
+    <path d="M54 22H32v38z" fill="currentColor" opacity=".8"/>
+  </symbol>
+  <symbol id="i-orb" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="27" fill="currentColor" opacity=".85"/>
+    <circle cx="32" cy="32" r="15" fill="currentColor"/>
+    <circle cx="23" cy="22" r="6" fill="#fff" opacity=".5"/>
+  </symbol>
+  <symbol id="i-arc" viewBox="0 0 64 64">
+    <path d="M4 52a28 28 0 0 1 56 0h-11a17 17 0 0 0-34 0z" fill="currentColor" opacity=".95"/>
+    <path d="M18 52a14 14 0 0 1 28 0h-10a4 4 0 0 0-8 0z" fill="currentColor" opacity=".5"/>
+  </symbol>
+  <symbol id="i-prism" viewBox="0 0 64 64">
+    <path d="M32 5 60 56H32z" fill="currentColor" opacity=".55"/>
+    <path d="M32 5 4 56h28z" fill="currentColor" opacity=".92"/>
+    <path d="M32 30 47 56H17z" fill="currentColor" opacity=".35"/>
+  </symbol>
+  <symbol id="i-stack" viewBox="0 0 64 64">
+    <rect x="4" y="34" width="56" height="24" rx="9" fill="currentColor" opacity=".45"/>
+    <rect x="11" y="19" width="42" height="24" rx="9" fill="currentColor" opacity=".72"/>
+    <rect x="19" y="5" width="26" height="24" rx="9" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-spark" viewBox="0 0 64 64">
+    <path d="M32 2c2 16 12 26 28 30-16 4-26 14-28 30-2-16-12-26-28-30 16-4 26-14 28-30z" fill="currentColor"/>
+    <circle cx="53" cy="12" r="5" fill="currentColor" opacity=".55"/>
+  </symbol>
+  <symbol id="i-bridge" viewBox="0 0 64 64">
+    <rect x="4" y="8" width="20" height="20" rx="7" fill="currentColor"/>
+    <rect x="40" y="36" width="20" height="20" rx="7" fill="currentColor" opacity=".6"/>
+    <path d="M24 18h10a8 8 0 0 1 8 8v10" stroke="currentColor" stroke-width="5" fill="none" opacity=".85" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-compass" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="27" fill="currentColor" opacity=".22"/>
+    <path d="M44 20 36 36l-16 8 8-16z" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<div class="wash" aria-hidden="true"></div>
+
+<div class="topbar">
+  <div class="shell">
+    <div class="bar">
+      <a class="brand" href="#/"><span class="mark"></span><span>Mathias Keller</span></a>
+      <nav class="navlinks">
+        <a href="#/" data-route="/" data-i18n="nav.profile">Profile</a>
+        <a href="#/ideas" data-route="/ideas" data-i18n="nav.ideas">Ideas</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <div class="langpick" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="de" aria-pressed="false">DE</button>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- =================== PROFILE =================== -->
+<section class="view active" id="view-profile">
+
+  <!-- HERO -->
+  <div class="hero shell">
+    <div class="hero-grid">
+      <div>
+        <span class="kicker"><span class="dot"></span><span data-i18n="hero.kick">Zurich · HR Technology</span></span>
+        <h1 class="h-xl" data-i18n="hero.h1">I've been on <span class="grad-text">every side</span> of an HR software decision.</h1>
+        <p class="sub" data-i18n="hero.sub">Recruited the people. Sold the licences. Ran the implementations. Led the consultants who deliver them. Today I decide which HR technologies are worth betting on — and make sure they still make sense two years after signature.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact"><span data-i18n="cta.talk">Start a conversation</span><span class="arw">→</span></a>
+          <a class="btn btn-ghost" href="#value" data-i18n="cta.value">What I'm useful for</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 320 300" width="100%" style="max-width:340px">
+          <defs>
+            <linearGradient id="gemA" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#4c6fff"/>
+            </linearGradient>
+            <linearGradient id="gemB" x1="1" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#e8479c"/><stop offset="1" stop-color="#a13fd6"/>
+            </linearGradient>
+            <linearGradient id="gemC" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#6d3ae8"/><stop offset="1" stop-color="#3b1585"/>
+            </linearGradient>
+            <linearGradient id="gemD" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0" stop-color="#ffa41b"/><stop offset="1" stop-color="#e8479c"/>
+            </linearGradient>
+            <radialGradient id="glow"><stop offset="0" stop-color="#8b5cf6" stop-opacity=".32"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+          </defs>
+          <circle cx="160" cy="150" r="128" fill="url(#glow)"/>
+          <g class="float">
+            <path d="M160 40 90 106h70z" fill="url(#gemA)"/>
+            <path d="M160 40 230 106h-70z" fill="url(#gemB)"/>
+            <path d="M90 106h70v146z" fill="url(#gemC)" opacity=".92"/>
+            <path d="M230 106h-70v146z" fill="url(#gemA)" opacity=".72"/>
+          </g>
+          <g class="float d1">
+            <path d="M56 176 34 198h22z" fill="url(#gemD)"/>
+            <path d="M56 176 78 198H56z" fill="url(#gemB)"/>
+            <path d="M34 198h22v46z" fill="url(#gemD)" opacity=".7"/>
+            <path d="M78 198H56v46z" fill="url(#gemB)" opacity=".85"/>
+          </g>
+          <g class="float d2">
+            <circle cx="262" cy="72" r="20" fill="url(#gemD)"/>
+            <circle cx="255" cy="65" r="6" fill="#fff" opacity=".55"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="path rev">
+      <span class="step"><span class="pip" style="background:var(--teal)"></span><span class="yr">2009–16</span><span data-i18n="p1">Law</span></span>
+      <span class="step"><span class="pip" style="background:var(--blue)"></span><span class="yr">2013–18</span><span data-i18n="p2">Tech recruiting</span></span>
+      <span class="step"><span class="pip" style="background:var(--violet)"></span><span class="yr">2018–23</span><span data-i18n="p3">SAP SuccessFactors delivery</span></span>
+      <span class="step"><span class="pip" style="background:var(--plum)"></span><span class="yr">2020–23</span><span data-i18n="p4">Leading 40 consultants</span></span>
+      <span class="step"><span class="pip" style="background:var(--pink)"></span><span class="yr">2022–23</span><span data-i18n="p5">800+ accounts</span></span>
+      <span class="step"><span class="pip" style="background:var(--amber)"></span><span class="yr">2024–</span><span data-i18n="p6">Portfolio &amp; partnerships</span></span>
+    </div>
+  </div>
+
+  <!-- VALUE -->
+  <div class="sec" id="value">
+    <div class="shell">
+      <div class="sec-head rev">
+        <span class="kicker" data-i18n="kick.value">The value</span>
+        <h2 class="h-lg" style="margin-top:20px" data-i18n="value.h2">Problems I'm good at</h2>
+        <p class="sub" data-i18n="value.sub">Most of these I learned by getting them wrong first, in a room with the customer.</p>
+      </div>
+
+      <div class="value-grid">
+        <article class="vcard rev">
+          <svg class="icon" style="color:var(--violet)"><use href="#i-gem"/></svg>
+          <h3 data-i18n="v1.h">Picking a system you'll live with for a decade</h3>
+          <p data-i18n="v1.p">I evaluate HR technology the way someone who has had to implement it does — against the gap it really fills, not the demo. Portfolio, strategy, culture and commercials, tested before anyone signs.</p>
+          <div class="proof"><span class="sq" style="background:var(--violet)"></span><span data-i18n="v1.m">16 implementations delivered</span></div>
+        </article>
+
+        <article class="vcard rev">
+          <svg class="icon" style="color:var(--blue)"><use href="#i-prism"/></svg>
+          <h3 data-i18n="v2.h">Rollouts that survive contact with reality</h3>
+          <p data-i18n="v2.p">Five full HRIS suite programmes, interfaces into SAP S/4HANA, ERP and payroll, teams of fifteen across client, vendor and partner. I know where implementations break, because I've been there when they did.</p>
+          <div class="proof"><span class="sq" style="background:var(--blue)"></span><span data-i18n="v2.m">Up to 30,000 employees · budgets to CHF 600k</span></div>
+        </article>
+
+        <article class="vcard rev">
+          <svg class="icon" style="color:var(--pink)"><use href="#i-stack"/></svg>
+          <h3 data-i18n="v3.h">Consultants who stay, and get good faster</h3>
+          <p data-i18n="v3.p">Co-led 30–40 consultants and interface developers. Rebuilt onboarding so new joiners reached independent delivery months earlier, and coached three direct reports into team leads of their own.</p>
+          <div class="proof"><span class="sq" style="background:var(--pink)"></span><span data-i18n="v3.m">Ramp time cut by 3–6 months · 95% team satisfaction</span></div>
+        </article>
+
+        <article class="vcard rev">
+          <svg class="icon" style="color:var(--amber)"><use href="#i-arc"/></svg>
+          <h3 data-i18n="v4.h">Turning customer complaints into a system change</h3>
+          <p data-i18n="v4.p">Read 500+ pieces of customer feedback, found the pattern, and rebuilt how account management works across the whole company — not as a pilot, across all 108 account managers.</p>
+          <div class="proof"><span class="sq" style="background:var(--amber)"></span><span data-i18n="v4.m">+50% customer meetings · −80% on the top complaint</span></div>
+        </article>
+
+        <article class="vcard rev">
+          <svg class="icon" style="color:var(--teal)"><use href="#i-bridge"/></svg>
+          <h3 data-i18n="v5.h">Partnerships that hold after the first escalation</h3>
+          <p data-i18n="v5.p">Co-selling, reselling or delivery — I design the commercial model, the responsibilities and the governance that decide whether a partnership is still working in year three.</p>
+          <div class="proof"><span class="sq" style="background:var(--teal)"></span><span data-i18n="v5.m">Full lifecycle, evaluation to exit</span></div>
+        </article>
+
+        <article class="vcard rev">
+          <svg class="icon" style="color:var(--plum)"><use href="#i-compass"/></svg>
+          <h3 data-i18n="v6.h">Selling something you can actually deliver</h3>
+          <p data-i18n="v6.p">I scoped and sold the projects I then had to deliver, which is a very effective cure for over-promising. Trained as a lawyer, so contracts and commercial terms hold no mystery either.</p>
+          <div class="proof"><span class="sq" style="background:var(--plum)"></span><span data-i18n="v6.m">~CHF 1m scoped and sold personally</span></div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOW -->
+  <div class="sec sec-tint" id="now">
+    <div class="shell">
+      <div class="sec-head rev">
+        <span class="kicker" data-i18n="kick.now">Today</span>
+        <p class="now-quote" style="margin-top:20px" data-i18n="now.q">I decide which HR technologies a Swiss market leader represents — and what happens after the contract is signed.</p>
+        <p class="sub" data-i18n="now.sub">Head of Products and Partners &amp; HR Solutions Advisor at HR Campus since October 2024. Three questions define the job.</p>
+      </div>
+
+      <div class="qrow">
+        <div class="qcard rev"><div class="n" style="color:var(--violet)" data-i18n="q1.k">Portfolio</div><p data-i18n="q1.v">Which HR technologies should we represent?</p></div>
+        <div class="qcard rev"><div class="n" style="color:var(--pink)" data-i18n="q2.k">Partnership</div><p data-i18n="q2.v">How do we work with their providers, commercially and operationally?</p></div>
+        <div class="qcard rev"><div class="n" style="color:var(--blue)" data-i18n="q3.k">Market</div><p data-i18n="q3.v">How does that become something a customer can buy, implement and live with?</p></div>
+      </div>
+
+      <div class="cycle rev">
+        <div class="cyc"><b data-i18n="c1.h">Evaluate</b><span data-i18n="c1.p">Fit on four axes: portfolio, strategy, culture, commercials.</span></div>
+        <div class="cyc"><b data-i18n="c2.h">Negotiate</b><span data-i18n="c2.p">Model, terms and incentives written down, not assumed.</span></div>
+        <div class="cyc"><b data-i18n="c3.h">Set the operating model</b><span data-i18n="c3.p">Who owns what, and how it's governed later.</span></div>
+        <div class="cyc"><b data-i18n="c4.h">Go to market</b><span data-i18n="c4.p">Story, pricing, sales material, enablement, launch.</span></div>
+        <div class="cyc"><b data-i18n="c5.h">Run it</b><span data-i18n="c5.p">Scorecards, feedback loops, competitive watch.</span></div>
+        <div class="cyc"><b data-i18n="c6.h">Exit</b><span data-i18n="c6.p">End it cleanly, with a path for existing customers.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMPACT -->
+  <div class="sec">
+    <div class="shell">
+      <div class="impact rev">
+        <span class="kicker" data-i18n="kick.np">Outside the job title</span>
+        <h2 class="h-md" data-i18n="np.h">Six years building Switzerland's tech-diversity movement</h2>
+        <p class="sub" data-i18n="np.p">Part of the management team at women++, responsible for communications and people. Marketing, fundraising, community and programme design — unpaid, and some of the work I'm proudest of.</p>
+        <div class="impact-stats">
+          <div class="ic"><b data-i18n="np1.n">1,200</b><span data-i18n="np1.l">applications for 70 programme places in 2023</span></div>
+          <div class="ic"><b data-i18n="np2.n">17</b><span data-i18n="np2.l">corporate sponsors won, USD 150k raised</span></div>
+          <div class="ic"><b data-i18n="np3.n">400+</b><span data-i18n="np3.l">engineers and designers recruited into programmes</span></div>
+          <div class="ic"><b data-i18n="np4.n">1st</b><span data-i18n="np4.l">women-friendly hackathon in Switzerland, organised end to end</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRACK RECORD -->
+  <div class="sec" id="track">
+    <div class="shell">
+      <div class="sec-head rev">
+        <span class="kicker" data-i18n="kick.track">Track record</span>
+        <h2 class="h-lg" style="margin-top:20px" data-i18n="track.h2">Fifteen years, one thread</h2>
+        <p class="sub" data-i18n="track.sub">Law, then people, then software, then the strategy behind it.</p>
+      </div>
+
+      <div class="tl">
+        <div class="trow rev">
+          <div class="yrs">2024 — <span data-i18n="tr.now">now</span></div>
+          <div><h4 data-i18n="r1.h">Head of Products and Partners · HR Solutions Advisor</h4><div class="org">HR Campus AG, Zurich</div></div>
+          <div class="note" data-i18n="r1.n">Portfolio strategy, partner ecosystem, go-to-market and customer advisory across the HR software landscape.</div>
+        </div>
+        <div class="trow soft rev">
+          <div class="yrs">2023 — 2024</div>
+          <div><h4 data-i18n="r2.h">Career break</h4><div class="org" data-i18n="r2.o">Spain &amp; Colombia</div></div>
+          <div class="note" data-i18n="r2.n">Travel, Spanish, and full-time attention to non-profit work. A deliberate pause, not a drift.</div>
+        </div>
+        <div class="trow rev">
+          <div class="yrs">2022 — 2023</div>
+          <div><h4 data-i18n="r3.h">Account Management Lead</h4><div class="org">HR Campus AG</div></div>
+          <div class="note" data-i18n="r3.n">Company-wide account management across 800+ accounts and 108 account managers.</div>
+        </div>
+        <div class="trow rev">
+          <div class="yrs">2020 — 2023</div>
+          <div><h4 data-i18n="r4.h">Team Lead SAP SuccessFactors</h4><div class="org">HR Campus AG</div></div>
+          <div class="note" data-i18n="r4.n">Co-led 30–40 consultants and developers, 5–8 direct reports, staffing 40+ client projects. Reported to Head of Consulting and CEO.</div>
+        </div>
+        <div class="trow rev">
+          <div class="yrs">2018 — 2023</div>
+          <div><h4 data-i18n="r5.h">Consultant, Account &amp; Project Manager</h4><div class="org">HR Campus AG</div></div>
+          <div class="note" data-i18n="r5.n">16 SuccessFactors implementations, third-level support for 20+ clients, 7 key accounts at 9/10 average satisfaction.</div>
+        </div>
+        <div class="trow rev">
+          <div class="yrs">2017 — 2018</div>
+          <div><h4 data-i18n="r6.h">Business Development Manager &amp; Recruiting Consultant</h4><div class="org">Rockstar Recruiting AG, Zurich</div></div>
+          <div class="note" data-i18n="r6.n">Deep-tech recruiting. 25 roles filled up to CTO level, 80% of candidates through community and referral.</div>
+        </div>
+        <div class="trow rev">
+          <div class="yrs">2016 — 2017</div>
+          <div><h4 data-i18n="r7.h">Trainee Solicitor</h4><div class="org">Burges Salmon LLP, Bristol</div></div>
+          <div class="note" data-i18n="r7.n">Commercial contracts, legal advice and client briefings at a full-service commercial firm.</div>
+        </div>
+        <div class="trow rev">
+          <div class="yrs">2013 — 2015</div>
+          <div><h4 data-i18n="r8.h">SAP Recruitment Consultant</h4><div class="org">Prime21 AG</div></div>
+          <div class="note" data-i18n="r8.n">2,000+ candidate interviews, 20 client accounts. Top-performing consultant twelve months running.</div>
+        </div>
+      </div>
+
+      <div class="edu">
+        <div class="ecard rev"><b data-i18n="e1.h">MSc Law &amp; Business</b><span data-i18n="e1.s">University of Law, Bristol · Distinction, 2016</span></div>
+        <div class="ecard rev"><b data-i18n="e2.h">LLB Bachelor of Laws</b><span data-i18n="e2.s">University of Birmingham · Honours 2:1, 2012</span></div>
+        <div class="ecard rev"><b data-i18n="e3.h">BComm with Law</b><span data-i18n="e3.s">University of Stellenbosch · Top 15%, 2009</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="sec" id="contact">
+    <div class="shell">
+      <div class="cta-box rev">
+        <span class="kicker" data-i18n="kick.contact">Contact</span>
+        <h2 class="h-lg" data-i18n="contact.h">Let's talk before you need a CV.</h2>
+        <p class="sub" data-i18n="contact.p">HR technology strategy, portfolio and partner leadership, consulting leadership, or a second opinion on a system decision that has stalled. English, German or Swiss German — Spanish if you're patient.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:mathew.keller@gmail.com"><span data-i18n="contact.mail">Email me</span><span class="arw">→</span></a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/mathias-kellerx/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- =================== IDEAS =================== -->
+<section class="view" id="view-ideas">
+
+  <div class="hero shell">
+    <div style="max-width:22ch">
+      <span class="kicker"><span class="dot"></span><span data-i18n="tl.kick">Writing &amp; speaking</span></span>
+      <h1 class="h-xl" style="margin:22px 0 24px" data-i18n="tl.h1">Chosen once. <span class="grad-text">Lived with for a decade.</span></h1>
+    </div>
+    <p class="sub" style="max-width:52ch" data-i18n="tl.sub">HR technology decisions are rarely revisited. I write for the people who have to make them and defend them two years later — CHROs, HR leaders, and the teams who own the systems.</p>
+  </div>
+
+  <div class="sec" style="padding-top:0">
+    <div class="shell">
+      <div class="feat rev">
+        <span class="kicker" data-i18n="feat.k">Keynote · 30 minutes</span>
+        <h3 data-i18n="feat.h">Megatrends reshaping Swiss HR</h3>
+        <p data-i18n="feat.p">Five acts for a Swiss HR audience: the demographic squeeze already under way, how HR arrived at its present shape, three horizons out to 2031, 2036 and 2046, and five things worth doing now. Every claim is tagged by the evidence behind it, so the room can tell fact from analysis from hypothesis.</p>
+        <div class="chips">
+          <span data-i18n="feat.t1">Sourced</span><span data-i18n="feat.t2">Analysis</span><span data-i18n="feat.t3">Hypothesis</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec sec-tint">
+    <div class="shell">
+      <div class="sec-head rev">
+        <span class="kicker" data-i18n="kick.themes">Themes</span>
+        <h2 class="h-lg" style="margin-top:20px" data-i18n="tl.h2">What I keep coming back to</h2>
+      </div>
+      <div class="theme-grid">
+        <article class="tcard rev">
+          <svg class="icon" style="color:var(--violet)"><use href="#i-orb"/></svg>
+          <h3 data-i18n="t1.h">The shrinking Swiss labour force</h3>
+          <p data-i18n="t1.p">Already contracting. Retirements peak at the end of this decade and immigration stops closing the gap around 2030. The real question isn't headcount planning — it's what HR operating models have to become.</p>
+        </article>
+        <article class="tcard rev">
+          <svg class="icon" style="color:var(--blue)"><use href="#i-stack"/></svg>
+          <h3 data-i18n="t2.h">Suite versus best-of-breed</h3>
+          <p data-i18n="t2.p">Companies get this wrong in both directions: buying integration they never use, or specialisation they can't operate. The feature list almost never decides it.</p>
+        </article>
+        <article class="tcard rev">
+          <svg class="icon" style="color:var(--pink)"><use href="#i-bridge"/></svg>
+          <h3 data-i18n="t3.h">The partnership behind the product</h3>
+          <p data-i18n="t3.p">How a vendor treats its partners predicts your experience of the software better than any demo. Most buyers never look at that layer.</p>
+        </article>
+        <article class="tcard rev">
+          <svg class="icon" style="color:var(--amber)"><use href="#i-spark"/></svg>
+          <h3 data-i18n="t4.h">AI in HR, minus the theatre</h3>
+          <p data-i18n="t4.p">Where automation and matching genuinely change the work, where they quietly don't, and what data protection and the EU AI Act will actually let a Swiss employer do.</p>
+        </article>
+      </div>
+      <div class="fmt rev">
+        <span data-i18n="f1">Articles</span><span data-i18n="f2">Newsletter</span><span data-i18n="f3">Roundtables</span>
+        <span data-i18n="f4">Interviews</span><span data-i18n="f5">LinkedIn</span><span data-i18n="f6">Keynotes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="shell">
+      <div class="cta-box rev">
+        <span class="kicker" data-i18n="kick.invite">Invitations</span>
+        <h2 class="h-lg" data-i18n="tl.cta.h">Need a speaker, or a sparring partner?</h2>
+        <p class="sub" data-i18n="tl.cta.p">Panels, closed roundtables and keynotes on HR technology strategy, Swiss demographics, and how HR software actually gets chosen.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:mathew.keller@gmail.com"><span data-i18n="contact.mail">Email me</span><span class="arw">→</span></a>
+          <a class="btn btn-ghost" href="#/" data-i18n="tl.cta.back">Back to profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  <div class="shell">
+    <span>© <span id="yr">2026</span> Mathias Keller · <span data-i18n="foot.city">Zurich, Switzerland</span></span>
+    <span><a href="https://www.linkedin.com/in/mathias-kellerx/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:mathew.keller@gmail.com" data-i18n="foot.mail">Email</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+var de = {
+"nav.profile":"Profil","nav.ideas":"Ideen","nav.contact":"Kontakt",
+"cta.talk":"Gespräch beginnen","cta.value":"Wofür ich nützlich bin",
+"contact.mail":"E-Mail schreiben","foot.city":"Zürich, Schweiz","foot.mail":"E-Mail",
+
+"hero.kick":"Zürich · HR Technologie",
+"hero.h1":"Ich war auf <span class=\"grad-text\">jeder Seite</span> eines HR-Software-Entscheids.",
+"hero.sub":"Die Menschen rekrutiert. Die Lizenzen verkauft. Die Einführungen geleitet. Die Beratenden geführt, die sie umsetzen. Heute entscheide ich, auf welche HR-Technologien es sich zu setzen lohnt — und sorge dafür, dass sie zwei Jahre nach Vertragsabschluss noch Sinn ergeben.",
+"p1":"Recht","p2":"Tech-Recruiting","p3":"SAP SuccessFactors Einführung","p4":"Führung von 40 Beratenden","p5":"800+ Kundenbeziehungen","p6":"Portfolio &amp; Partner",
+
+"kick.value":"Der Nutzen","value.h2":"Probleme, die ich gut löse",
+"value.sub":"Die meisten habe ich zuerst falsch gelöst — im Raum mit dem Kunden.",
+"v1.h":"Ein System wählen, mit dem man ein Jahrzehnt lebt",
+"v1.p":"Ich beurteile HR-Technologie so, wie es jemand tut, der sie danach einführen muss: gegen die echte Lücke, nicht gegen die Demo. Portfolio, Strategie, Kultur und Kommerz — geprüft, bevor jemand unterschreibt.",
+"v1.m":"16 Einführungen geliefert",
+"v2.h":"Einführungen, die der Realität standhalten",
+"v2.p":"Fünf vollständige HRIS-Suite-Programme, Schnittstellen zu SAP S/4HANA, ERP und Payroll, Teams von fünfzehn Personen aus Kunde, Anbieter und Partner. Ich weiss, wo Projekte brechen — ich war dabei, als sie es taten.",
+"v2.m":"Bis 30'000 Mitarbeitende · Budgets bis CHF 600k",
+"v3.h":"Beratende, die bleiben und schneller gut werden",
+"v3.p":"30–40 Beratende und Schnittstellenentwickler mitgeführt. Das Onboarding neu gebaut, sodass Neueinsteigende Monate früher eigenständig lieferten — und drei direkt unterstellte Personen zu eigenen Teamleads gecoacht.",
+"v3.m":"Einarbeitung 3–6 Monate kürzer · 95% Teamzufriedenheit",
+"v4.h":"Aus Kundenkritik eine Systemänderung machen",
+"v4.p":"500+ Kundenrückmeldungen gelesen, das Muster gefunden und das Account Management im ganzen Unternehmen neu aufgesetzt — nicht als Pilot, sondern über alle 108 Account Manager.",
+"v4.m":"+50% Kundentermine · −80% beim Hauptkritikpunkt",
+"v5.h":"Partnerschaften, die die erste Eskalation überstehen",
+"v5.p":"Co-Selling, Reselling oder Delivery — ich gestalte das Kommerzmodell, die Verantwortlichkeiten und die Governance, die darüber entscheiden, ob eine Partnerschaft im dritten Jahr noch funktioniert.",
+"v5.m":"Ganzer Lebenszyklus, Evaluation bis Exit",
+"v6.h":"Verkaufen, was man auch liefern kann",
+"v6.p":"Ich habe die Projekte verkauft, die ich danach selbst liefern musste — ein sehr wirksames Mittel gegen zu grosse Versprechen. Als ausgebildeter Jurist sind mir Verträge und kommerzielle Konditionen ebenfalls vertraut.",
+"v6.m":"~CHF 1 Mio. selbst skopiert und verkauft",
+
+"kick.now":"Heute",
+"now.q":"Ich entscheide, welche HR-Technologien ein Schweizer Marktführer vertritt — und was nach der Vertragsunterschrift passiert.",
+"now.sub":"Head of Products and Partners und HR Solutions Advisor bei HR Campus seit Oktober 2024. Drei Fragen definieren die Aufgabe.",
+"q1.k":"Portfolio","q1.v":"Welche HR-Technologien sollen wir vertreten?",
+"q2.k":"Partnerschaft","q2.v":"Wie arbeiten wir mit deren Anbietern zusammen, kommerziell und operativ?",
+"q3.k":"Markt","q3.v":"Wie wird daraus etwas, das ein Kunde kaufen, einführen und betreiben kann?",
+"c1.h":"Evaluieren","c1.p":"Fit auf vier Achsen: Portfolio, Strategie, Kultur, Kommerz.",
+"c2.h":"Verhandeln","c2.p":"Modell, Konditionen und Anreize festgehalten, nicht vorausgesetzt.",
+"c3.h":"Betriebsmodell setzen","c3.p":"Wer verantwortet was — und wie wird später geführt.",
+"c4.h":"In den Markt bringen","c4.p":"Story, Preise, Verkaufsunterlagen, Enablement, Launch.",
+"c5.h":"Betreiben","c5.p":"Scorecards, Feedback-Schleifen, Wettbewerbsbeobachtung.",
+"c6.h":"Beenden","c6.p":"Sauber beenden, mit einem Weg für bestehende Kunden.",
+
+"kick.np":"Neben dem Jobtitel",
+"np.h":"Sechs Jahre Aufbau der Schweizer Tech-Diversity-Bewegung",
+"np.p":"Teil des Management-Teams von women++, verantwortlich für Kommunikation und Menschen. Marketing, Fundraising, Community und Programmdesign — unbezahlt, und einiges davon macht mich am stolzesten.",
+"np1.n":"1'200","np1.l":"Bewerbungen auf 70 Programmplätze im Jahr 2023",
+"np2.n":"17","np2.l":"Firmensponsoren gewonnen, USD 150k gesammelt",
+"np3.n":"400+","np3.l":"Entwicklerinnen und Designerinnen für Programme gewonnen",
+"np4.n":"1.","np4.l":"frauenfreundlicher Hackathon der Schweiz, End-to-End organisiert",
+
+"kick.track":"Werdegang","track.h2":"Fünfzehn Jahre, ein roter Faden",
+"track.sub":"Recht, dann Menschen, dann Software, dann die Strategie dahinter.","tr.now":"heute",
+"r1.h":"Head of Products and Partners · HR Solutions Advisor",
+"r1.n":"Portfoliostrategie, Partner-Ökosystem, Go-to-Market und Kundenberatung über die HR-Softwarelandschaft hinweg.",
+"r2.h":"Berufliche Auszeit","r2.o":"Spanien &amp; Kolumbien",
+"r2.n":"Reisen, Spanisch und volle Aufmerksamkeit für die Non-Profit-Arbeit. Eine bewusste Pause, kein Abdriften.",
+"r3.h":"Leiter Account Management","r3.n":"Unternehmensweites Account Management über 800+ Kundenbeziehungen und 108 Account Manager.",
+"r4.h":"Team Lead SAP SuccessFactors","r4.n":"30–40 Beratende und Entwickler mitgeführt, 5–8 direkt unterstellt, Besetzung von 40+ Kundenprojekten. Berichtete an Head of Consulting und CEO.",
+"r5.h":"Berater, Account &amp; Projektleiter","r5.n":"16 SuccessFactors-Einführungen, 3rd-Level-Support für 20+ Kunden, 7 Key Accounts mit durchschnittlich 9/10 Zufriedenheit.",
+"r6.h":"Business Development Manager &amp; Recruiting Consultant","r6.n":"Deep-Tech-Recruiting. 25 Stellen bis auf CTO-Stufe besetzt, 80% der Kandidierenden über Community und Empfehlungen.",
+"r7.h":"Trainee Solicitor","r7.n":"Kommerzielle Verträge, Rechtsberatung und Mandantenbriefings in einer Full-Service-Wirtschaftskanzlei.",
+"r8.h":"SAP Recruitment Consultant","r8.n":"2'000+ Kandidateninterviews, 20 Kundenkonten. Zwölf Monate in Folge leistungsstärkster Berater.",
+"e1.h":"MSc Law &amp; Business","e1.s":"University of Law, Bristol · Distinction, 2016",
+"e2.h":"LLB Bachelor of Laws","e2.s":"University of Birmingham · Honours 2:1, 2012",
+"e3.h":"BComm with Law","e3.s":"University of Stellenbosch · Top 15%, 2009",
+
+"kick.contact":"Kontakt","contact.h":"Reden wir, bevor Sie einen Lebenslauf brauchen.",
+"contact.p":"HR-Technologiestrategie, Portfolio- und Partnerführung, Beratungsführung oder eine Zweitmeinung zu einem Systementscheid, der feststeckt. Deutsch, Schweizerdeutsch oder Englisch — Spanisch, wenn Sie Geduld haben.",
+
+"tl.kick":"Schreiben &amp; Sprechen",
+"tl.h1":"Einmal gewählt. <span class=\"grad-text\">Ein Jahrzehnt gelebt.</span>",
+"tl.sub":"HR-Technologieentscheide werden selten neu aufgerollt. Ich schreibe für die Menschen, die sie treffen und zwei Jahre später begründen müssen: CHROs, HR-Verantwortliche und die Teams, die die Systeme betreiben.",
+"feat.k":"Referat · 30 Minuten","feat.h":"Megatrends, die Schweizer HR verändern",
+"feat.p":"Fünf Akte für ein Schweizer HR-Publikum: der demografische Druck, der längst läuft, wie HR zu seiner heutigen Form kam, drei Horizonte bis 2031, 2036 und 2046 und fünf Dinge, die jetzt zu tun sind. Jede Aussage ist nach ihrer Evidenz gekennzeichnet, damit der Raum Fakt von Analyse und Hypothese unterscheiden kann.",
+"feat.t1":"Belegt","feat.t2":"Analyse","feat.t3":"Hypothese",
+"kick.themes":"Themen","tl.h2":"Worauf ich immer wieder zurückkomme",
+"t1.h":"Das schrumpfende Schweizer Erwerbspotenzial",
+"t1.p":"Es schrumpft bereits. Die Pensionierungen erreichen Ende dieses Jahrzehnts ihren Höhepunkt, und Zuwanderung schliesst die Lücke ab etwa 2030 nicht mehr. Die eigentliche Frage ist nicht die Headcount-Planung, sondern was aus den HR-Betriebsmodellen werden muss.",
+"t2.h":"Suite gegen Best-of-Breed",
+"t2.p":"Unternehmen liegen in beide Richtungen falsch: Sie kaufen Integration, die sie nie nutzen, oder Spezialisierung, die sie nicht betreiben können. Die Funktionsliste entscheidet fast nie.",
+"t3.h":"Die Partnerschaft hinter dem Produkt",
+"t3.p":"Wie ein Anbieter seine Partner behandelt, sagt mehr über die spätere Erfahrung mit der Software aus als jede Demo. Die meisten Käufer schauen sich diese Ebene nie an.",
+"t4.h":"KI im HR, ohne Theater",
+"t4.p":"Wo Automatisierung und Matching die Arbeit wirklich verändern, wo eben nicht, und was Datenschutz und EU AI Act einem Schweizer Arbeitgeber tatsächlich erlauben.",
+"f1":"Artikel","f2":"Newsletter","f3":"Roundtables","f4":"Interviews","f5":"LinkedIn","f6":"Referate",
+"kick.invite":"Anfragen","tl.cta.h":"Referent oder Sparringpartner gesucht?",
+"tl.cta.p":"Panels, geschlossene Roundtables und Referate zu HR-Technologiestrategie, Schweizer Demografie und der Frage, wie HR-Software wirklich ausgewählt wird.",
+"tl.cta.back":"Zurück zum Profil"
+};
+
+var nodes = [].slice.call(document.querySelectorAll("[data-i18n]"));
+var en = {};
+nodes.forEach(function(n){ en[n.getAttribute("data-i18n")] = n.innerHTML; });
+
+function setLang(l){
+  var d = l === "de" ? de : en;
+  nodes.forEach(function(n){
+    var k = n.getAttribute("data-i18n");
+    if(d[k] !== undefined) n.innerHTML = d[k];
+  });
+  document.documentElement.lang = l;
+  [].forEach.call(document.querySelectorAll(".langpick button"), function(b){
+    b.setAttribute("aria-pressed", String(b.dataset.lang === l));
+  });
+}
+[].forEach.call(document.querySelectorAll(".langpick button"), function(b){
+  b.addEventListener("click", function(){ setLang(b.dataset.lang); });
+});
+
+/* routing */
+var views = {"/":"view-profile","/ideas":"view-ideas"};
+function show(path, toTop){
+  Object.keys(views).forEach(function(p){
+    document.getElementById(views[p]).classList.toggle("active", p === path);
+  });
+  [].forEach.call(document.querySelectorAll("[data-route]"), function(a){
+    if(a.dataset.route === path) a.setAttribute("aria-current","page");
+    else a.removeAttribute("aria-current");
+  });
+  if(toTop) window.scrollTo(0,0);
+  observe();
+}
+function route(){
+  var h = location.hash.replace(/^#/,"");
+  if(h && h.charAt(0) !== "/"){
+    var t = document.getElementById(h);
+    if(t){ show("/", false); t.scrollIntoView({behavior:"smooth"}); return; }
+  }
+  show(views[h] ? h : "/", true);
+}
+window.addEventListener("hashchange", route);
+
+/* reveal */
+var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var io;
+function observe(){
+  if(reduce){ [].forEach.call(document.querySelectorAll(".rev"), function(e){ e.classList.add("in"); }); return; }
+  if(io) io.disconnect();
+  io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, {rootMargin:"0px 0px -6% 0px", threshold:.05});
+  [].forEach.call(document.querySelectorAll(".view.active .rev"), function(e){ io.observe(e); });
+}
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+route();
+})();
+</script>
+</body>
+</html>
